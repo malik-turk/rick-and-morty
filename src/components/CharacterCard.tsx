@@ -8,6 +8,7 @@ import Badge from "@mui/material/Badge";
 export default function ActionAreaCard({ character }: any) {
   return (
     <Badge
+      data-testid="character-card"
       color="secondary"
       badgeContent={character.status}
       sx={{ width: "100%" }}
@@ -22,9 +23,10 @@ export default function ActionAreaCard({ character }: any) {
           height="140"
           image={character.image}
           alt={character.name}
+          data-testid="character-card--image"
         />
         <CardContent>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" component="div" data-testid="character-card--title">
             {character.name}
           </Typography>
         </CardContent>
