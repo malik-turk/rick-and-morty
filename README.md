@@ -28,6 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - React 18
 - MaterialUI
 - Styled Components
+- Apollo Client
 - Jest & React Testing Library
 
 ## Demo
