@@ -8,3 +8,7 @@ export interface CharactersData {
 export interface CharactersResponse {
     results: CharactersData[]
 }
+
+export interface CharacterRefetchParams {
+    page: number;
+}

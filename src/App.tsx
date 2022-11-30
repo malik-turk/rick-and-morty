@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Divider from '@mui/material/Divider';
+import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 
 // Components
@@ -19,7 +19,9 @@ const Title = styled(Typography)`
 `;
 
 function App() {
-  const { loading, data }: QueryTypes = useQuery(CHARACTERS_QUERY);
+  const { loading, data, refetch }: QueryTypes = useQuery(CHARACTERS_QUERY, {
+    variables: { page: 1 },
+  });
 
   return (
     <Container maxWidth="lg">
@@ -29,7 +31,11 @@ function App() {
         </Title>
         <Divider />
       </header>
-      <CharactersGrid data={data} loading={loading} />
+      <CharactersGrid
+        data={data}
+        loading={loading}
+        refetch={refetch}
+      />
     </Container>
   );
 }
